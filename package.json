@@ -1,0 +1,20 @@
+{
+  "name": "cdrc-sass-structure",
+  "version": "0.1.0",
+  "description": "The basic sass structure of the project. Suitable for any kind of projects. Contains the basic mixin and variables.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cedric-Illya/cdrc-sass-structure.git"
+  },
+  "keywords": [
+    "responsive",
+    "css",
+    "sass",
+    "scss",
+    "smacss",
+    "css scaffold"
+  ],
+  "author": "Cedric Illya <cedric.illya@yandex.ru>",
+  "license": "MIT"
+}

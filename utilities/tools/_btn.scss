@@ -1,0 +1,14 @@
+// ==================
+// btn
+// ------------------
+// ==================
+
+@mixin btn {}
+
+@mixin btn-fill() {}
+
+@mixin btn-outline() { }
+
+@mixin btn-square($size: 5rem) {
+    @include size($size);
+}

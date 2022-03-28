@@ -1,0 +1,18 @@
+// ===============
+// grid
+// ---------------
+// breakpoints
+// columns
+// gap
+// ==============
+
+$breakpoints: (
+    'lx': 1344px,
+    'lg': 1290px,
+    'md': 992px,
+    'sm': 768px,
+    'sx': 480px
+);
+
+$columns: 12;
+$gap: 15px;

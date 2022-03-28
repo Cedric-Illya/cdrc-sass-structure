@@ -1,0 +1,24 @@
+// ==================
+// Function
+// ------------------
+// device
+// strip-unit
+// ==================
+
+@function device( $size ) {
+    @if ( type-of($size) == 'number' ) {
+        @return $size;
+    }
+
+    @else {
+        @return map-get( $breakpoints, $size );
+    }
+}
+
+@function strip-units($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

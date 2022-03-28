@@ -1,0 +1,96 @@
+// ================
+// Fonts
+// ================
+
+@mixin font($font-size, $line-height: $font-size) {
+    font-size: $font-size;
+    line-height: strip-units($line-height) / strip-units($font-size);
+}
+
+@mixin text-large {
+    @include font($fs-large, $lh-large);
+}
+
+@mixin text-base {
+    @include font($fs-base, $lh-base);
+}
+
+@mixin text-small {
+    @include font($fs-small, $lh-small);
+}
+
+
+
+@mixin heading {
+    margin: 0;
+    color: $color-text;
+    font-family: $font-family-title;
+
+    a {
+        color: inherit;
+    }
+}
+
+@mixin h1($font-weight: $heading-font-weight-base) {
+    @include heading;
+    @include font(2.8rem, 3.5rem);
+    font-weight: $font-weight;
+
+    @include desctop(sm) {
+        @include font(4.4rem, 5rem);
+    }
+
+    @include desctop(md) {
+        @include font($h1-fs, $h1-lh);
+    }
+}
+
+@mixin h2($font-weight: $heading-font-weight-base) {
+    @include heading;
+    @include font(2.4rem, 3rem);
+    font-weight: $font-weight;
+
+    @include desctop(sm) {
+        @include font(3rem, 4rem);
+    }
+
+    @include desctop(md) {
+        @include font($h2-fs, $h2-lh);
+    }
+
+}
+
+@mixin h3($font-weight: $heading-font-weight-base) {
+    @include heading;
+    @include font(2rem, 3rem);
+    font-weight: $font-weight;
+
+    @include desctop(sm) {
+        @include font(2.4rem, 3rem);
+    }
+
+    @include desctop(md) {
+        @include font($h3-fs, $h3-lh);
+    }
+}
+
+@mixin h4($font-weight: $heading-font-weight-base) {
+    @include heading;
+    @include font(1.7rem, 2.4rem);
+    font-weight: $font-weight;
+
+    @include desctop(md) {
+        @include font($h4-fs, $h4-lh);
+    }
+}
+
+@mixin h5($font-weight: $heading-font-weight-base) {
+    @include heading;
+    @include font($h5-fs, $h5-lh);
+    font-weight: $font-weight;
+    text-transform: uppercase;
+}
+
+@mixin h6($font-weight: $heading-font-weight-base) {
+    @include h5($font-weight: $heading-font-weight-base);
+}

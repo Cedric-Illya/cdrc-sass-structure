@@ -1,0 +1,107 @@
+// =============
+// Grid
+// -------------
+// container
+// line
+// col
+// =============
+
+@mixin container($fluid: null, $local_gap: $gap) {
+    margin: 0 auto;
+    padding: 0 $local_gap;
+    width: 100%;
+
+    @if ($fluid != "fluid") {
+
+        max-width: device(lg) + ($local_gap * 2);
+
+    } @else {
+
+        max-width: initial;
+
+    }
+}
+
+
+
+@mixin line($align-h: null, $align-v: null, $direction: x, $withuot_col: true) {
+    display: flex;
+    flex-wrap: wrap;
+
+    @if ($withuot_col) {
+
+        margin: 0 -$gap;
+
+    }
+
+    @if ($direction=='y') {
+
+        flex-direction: column;
+        
+    }
+
+    @if ($align-h=='center') {
+
+        justify-content: center;
+
+    } @else if ($align-h=='start') {
+
+        justify-content: flex-start;
+
+    } @else if ($align-h=='end') {
+
+        justify-content: flex-end;
+
+    } @else if ($align-h=='around') {
+
+        justify-content: space-around;
+
+    } @else if ($align-h=='between') {
+
+        justify-content: space-between;
+
+    }
+
+    @if ($align-v=='center') {
+
+        align-items: center;
+
+    } @else if ($align-v=='start') {
+
+        align-items: flex-start;
+
+    } @else if ($align-v=='end') {
+
+        align-items: flex-end;
+
+    } @else if ($align-v=='stretch') {
+
+        align-items: stretch;
+
+    } @else if ($align-v=='around') {
+
+        align-items: space-around;
+
+    } @else if ($align-v=='between') {
+
+        align-items: space-between;
+    }
+}
+
+
+
+@mixin col($size: null, $local_gap: $gap) {
+    padding: 0 $local_gap;
+
+    @if $size {
+
+        min-width: $size * 100%;
+        width: $size * 100%;
+        max-width: $size * 100%;
+
+    } @else {
+
+        flex: 1 1 0;
+
+    }
+}
